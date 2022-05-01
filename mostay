@@ -1,0 +1,98 @@
+#!/usr/bin/env python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.common.exceptions import StaleElementReferenceException
+from mandarin_locations import mo_dict
+from datetime import datetime
+from time import sleep
+from PIL import Image
+import glob
+import os
+
+os.chdir('/Users/marksoro')
+type_print = lambda message: os.system(f"echo '{message}'| pv -qL 25")
+
+def getmostay(hotel_code,hotel_name):
+    date = datetime.now().date().isoformat()
+    site = "https://www.mandarinoriental.com/reservations/?"
+    options = Options()
+    options.headless = True
+    driver = webdriver.Chrome(options=options,
+                           service= ( Service('/Users/marksoro/chromedriver/chromedriver')) )
+    driver.get(site+"arrive="+date+"&depart="+date+"&hotel="+hotel_code+
+                                  "&currency=USD&rooms=1&adults=2&promo=Stay%40MO%242016%40")
+    driver.set_window_size(1250,900)
+
+    def find_element_and_screenshot(screenshot_name):
+        element = driver.find_element(By.CLASS_NAME,"cbe-calendar")
+        sleep(1)
+        element.screenshot(screenshot_name)
+
+    def click_next():
+        driver.find_element(By.CLASS_NAME,"datepick-cmd-next").click()
+
+    find_element_and_screenshot('1.png')
+    click_next()
+    find_element_and_screenshot('2.png')
+    click_next()
+    find_element_and_screenshot('3.png')
+    driver.find_element(By.ID,"hotel").screenshot(hotel_name+'.png')
+    type_print(f'   {hotel_name} status: OK')
+    driver.close()
+
+def combine_image(list_of_images,location,name=None,stack='h'):
+        images = [Image.open(image) for image in list_of_images]
+        widths, heights = zip(*(i.size for i in images))
+
+        if stack == 'h':
+            combined_image = Image.new('RGB', (sum(widths), max(heights)))
+            x_pos = 0
+            for im in images:
+                combined_image.paste(im, (x_pos,0))
+                x_pos += im.size[0]
+
+        elif stack =='v':
+            combined_image = Image.new('RGB', (widths[0], heights[0] + (sum(heights)-heights[0])))
+            y_pos = 0
+            for im in images:
+                combined_image.paste(im, (0,y_pos))
+                y_pos += im.size[1]
+
+        for image in list_of_images:
+            os.remove(image)
+
+        combined_image.save(location)
+
+def run_mostay():
+    hotel_query = input("\n   Which hotel(s)?  ").replace(" ",'').title().split(',')
+    hotel = [key for key,val in mo_dict.items() for hotel in hotel_query if hotel in key]
+    hotel_code = [val for key,val in mo_dict.items() for hotel in hotel_query if hotel in key]
+    mo_selection = dict(zip(hotel, hotel_code))
+    type_print('\n   Fetching MOstay for:\n')
+    for htl in hotel:
+        type_print(f'   --> {htl}')
+    print(' ')
+
+    try:
+        for hotel_name,hotel_code in mo_selection.items():
+            getmostay(hotel_code,hotel_name)
+            combine_image(['1.png','2.png','3.png'],'mo_'+hotel_name+'.png',hotel_name)
+            combine_image([hotel_name+'.png','mo_'+hotel_name+'.png'],'mo_'+hotel_name+'.png',hotel_name)
+
+    except StaleElementReferenceException:
+        type_print(f'\n   Error retrieving **{hotel_name}** page has not loaded before taking screenshot')
+        
+def run_main_mostay():
+    path = '/Users/marksoro/Desktop/'
+    run_mostay()
+    try:
+        combine_image(glob.glob('mo_*.png'),path+'mo_stay.png',stack='v')
+        type_print('\n   Program finished\n')
+        sleep(1)
+        Image.open(path+'mo_stay.png').show()
+    except ValueError:
+        type_print('\n   No results, please try again !\n')
+
+run_main_mostay()
