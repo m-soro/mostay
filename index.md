@@ -8,7 +8,7 @@ Get MO Stay availability up to the next two months.
 
 Running this script will return this file:
 
-<div class="animate__animated animate__fadeInDown"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_stay.png" alt="demo"></div>
+<div class="animate__animated animate__fadeIn"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_stay.png" alt="demo"></div>
 
 [View the source code](https://github.com/m-soro/mostay/blob/main/mostay)
 
