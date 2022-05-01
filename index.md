@@ -1,6 +1,6 @@
 # MO Stay
 
-![image](https://raw.githubusercontent.com/m-soro/mostay/main/files/logo4.png)
+![image](https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_art.png)
 
 Get MO Stay availability up to the next two months.
 
