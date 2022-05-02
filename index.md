@@ -1,4 +1,4 @@
-# MO Stay
+<div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/logo4.png" alt="logo"></div>
 
 <div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_art.png" alt="mowas"></div>
 
