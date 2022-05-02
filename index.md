@@ -1,10 +1,10 @@
 # MO Stay
 
-![image](https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_art.png)
+<div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_art.png" alt="mowas"></div>
 
 Get MO Stay availability up to the next two months.
 
-<div class="demo anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/demo.gif" alt="demo"></div>
+<div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/demo.gif" alt="demo"></div>
 
 ### Running this script will return this file:
 
