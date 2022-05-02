@@ -19,7 +19,7 @@ for (const pic of imglist) {
   myObserver.observe(pic)
  }
 
-------
+// ------------------------------------------------------------------------------------------//
 // const element = document.querySelector('.demo')
 
 // const callback = (entries, observer) => {
@@ -36,5 +36,4 @@ for (const pic of imglist) {
 // const myObserver = new IntersectionObserver(callback, {threshold: 0.0000001})
 
 // myObserver.observe(element)
-
-------
+// ------------------------------------------------------------------------------------------//
