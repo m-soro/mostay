@@ -1,4 +1,4 @@
-const imglist = document.querySelectorAll(".pic");    
+const imglist = document.querySelectorAll(".anim");    
 
 const callback = (entries, observer) => {
   entries.forEach((entry) => {
