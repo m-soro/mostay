@@ -1,17 +1,17 @@
 <div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/logo4.png" alt="logo"></div>
 
 <div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_art.png" alt="mowas"></div>
-<br>
+
 <br>
 Get MO Stay availability up to the next two months.
 
 <div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/demo.gif" alt="demo"></div>
-<br>
+
 <br>
 ### Running this script will return this file:
 
 <div class="anim"><img src="https://raw.githubusercontent.com/m-soro/mostay/main/files/mo_stay.png" alt="result"></div>
-<br>
+
 <br>
 ### See it in action:
 
@@ -20,7 +20,7 @@ Get MO Stay availability up to the next two months.
 </div>
 
 <script src="https://player.vimeo.com/api/player.js"></script>
-<br>
+
 <br>
 [View the source code](https://github.com/m-soro/mostay/blob/main/mostay)
 
