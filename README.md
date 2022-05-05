@@ -10,10 +10,9 @@ Get MO Stay availability up to the next two months.
 
 [Visit Mandarin Oriental Website](https://www.mandarinoriental.com/)
 
-This project was built using Selenium and Pillow packages.
+This project was created as a tool make it easier to check MOstay availabilities. Although, Mandarin Oriental's website is beautiful and intuitive. The brand has many popular properties over the world and is not always available for MOStay bookings. 
 
-There are several components into this project.
+I built this program using the Selenium and Pillow packages. Selenium is used for browser automation and Pillow is used for screenshot/image processing. 
 
-It started as a small program, where the program just saves a screenshot of the current calendar month of a given Mandarin propery but, this wasn't very helpful at all. 
-
-What I was looking for is a way to get a screenshot of three calendar month based on MOStay availability. This will require the program to click thru the links to the next calendar. 
+Here's how I got this started:
+1. Visit the website, complete with the date an
