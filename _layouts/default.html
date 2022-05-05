@@ -14,16 +14,14 @@
     
     <script src='script.js' defer></script>
     <style> 
+      body    { font-family:"Didot", "Times New Roman"; }
+      a       { color:#ca9b36; }
       .anim   { visibility: hidden; }
       .center { display: block;
                 margin-left: auto;
                 margin-right: auto;
-                width: 75%;
-              }
-      h2,h3   { text-align:center;
-                font-family:"Didot", "Times New Roman"
-              }
-      p       { font-family:"Didot", "Times New Roman" }
+                width: 75%; }
+      h2,.cen { text-align:center; }
     </style>
 
     
@@ -43,10 +41,10 @@
           <img src="{{site.logo | relative_url}}" alt="Logo" class="center"/>
         {% endif %}
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
+        <p class="cen">{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.github.is_project_page %}
-        <p class="view"><a href="{{ site.github.repository_url }}">View the Project</a></p>
+        <p class="view header"><a href="{{ site.github.repository_url }}">View the Project</a></p>
         {% endif %}
 
         {% if site.github.is_user_page %}
@@ -68,9 +66,9 @@
       </section>
       <footer>
         {% if site.github.is_project_page %}
-        <p>This project is created by <a href="{{ site.github.owner_url }}">Mark Soro</a></p>
+        <p class="cen">This project is created by <a href="{{ site.github.owner_url }}">Mark Soro</a></p>
         {% endif %}
-        <span><small><a href="mailto: napoleon_soro@rocketmail.com"> Contact me </a> | <a href="https://www.linkedin.com/in/marksoro"> Connect in LinkedIn </a><small></span>
+        <span class="cen"><small><a href="mailto: napoleon_soro@rocketmail.com"> Contact me </a> | <a href="https://www.linkedin.com/in/marksoro"> Connect in LinkedIn </a><small></span>
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
