@@ -15,7 +15,7 @@
     <script src='script.js' defer></script>
     <style> 
       *       { font-family:"Didot", "Times New Roman"; }
-      .gold   { color:#ca9b36; }
+      h2      { color:#ca9b36; }
       .anim   { visibility: hidden; }
       .center { display: block;
                 margin-left: auto;
@@ -35,7 +35,7 @@
   <body>
     <div class="wrapper">
       <header class="cen">
-        <div class="animate__animated animate__fadeIn center"><h2 class="gold"><a href='https://m-soro.github.io/mostay/'>The Mandarin Oriental MOstay Programme</a></h2></div>
+        <div class="animate__animated animate__fadeIn center"><h2><a href='https://m-soro.github.io/mostay/'>The Mandarin Oriental MOstay Programme</a></h2></div>
 
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" class="center"/>
@@ -44,7 +44,7 @@
         <p class="cen">{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.github.is_project_page %}
-        <p class="view header gold"><a href="{{ site.github.repository_url }}">View the Project</a></p>
+        <p class="view header"><a href="{{ site.github.repository_url }}">View the Project</a></p>
         {% endif %}
 
         {% if site.github.is_user_page %}
