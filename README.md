@@ -20,7 +20,7 @@ To create this project, I had to do the following:
     * Correctly formatted date
     * Property idetifier
     * MOStay code
-   The other data from the URL are optional by I found this out by testing what is the least info needed to return what I was looking for.
+   The other data from the URL are optional. I found this out by testing what is the least info needed to return what I was looking for.
 
 2. Take the screenshot calendar screenshot.
    I found the element that I needed to screenshot using the inspect option from my browser and using Selenium to select the element.
@@ -32,5 +32,13 @@ To create this project, I had to do the following:
 
 5. Concatenate all of this images.
    I have to first stitch all of the calendar images, then attach the property name image. This is accomplished by Pillow package.  
+
+In detail:
+
+To start I needed to create a dictionary of all Mandarin Oriental property name and their respective hotel code. This data can be found in the hotel selection dropdown by using the ispect tool. To keep the focus on this program, I saved this dictionary on a separate .py file and imported it to my main program. 
+
+Next, I have to construct the URL with all the data needed to produce the correct hotel's calendar image. Using the input from my terminal, by giving three letter or if neccessary the whole location name (if location name) are very similar. I should be able to look for the closest match in my dictionary. 
+
+After the successfully prio
 
  
